@@ -1,0 +1,6 @@
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\Exceptions\bin\Debug\Exceptions.dll
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\Exceptions\bin\Debug\Exceptions.pdb
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\Exceptions\obj\Debug\Exceptions.csprojAssemblyReference.cache
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\Exceptions\obj\Debug\Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\Exceptions\obj\Debug\Exceptions.dll
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\Exceptions\obj\Debug\Exceptions.pdb

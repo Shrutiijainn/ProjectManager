@@ -1,0 +1,16 @@
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\ProjectManagerDAL.dll.config
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\ProjectManagerDAL.dll
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\ProjectManagerDAL.pdb
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\EntityFramework.dll
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\EntityFramework.xml
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.csprojAssemblyReference.cache
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.csproj.CoreCompileInputs.cache
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.csproj.CopyComplete
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.dll
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.pdb
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.Migrations.entitiesadded.resources
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.csproj.GenerateResource.cache
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\Exceptions.dll
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\Exceptions.pdb
