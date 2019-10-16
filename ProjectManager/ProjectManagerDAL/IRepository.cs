@@ -8,7 +8,7 @@ namespace ProjectManagerDAL
 {
     public interface IRepository<T> : IDisposable
     {
-        List<T> GetAll();
+        List<T> Display();
         T Find(int id);
         bool Add(T item);
     }

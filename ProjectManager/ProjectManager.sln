@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagerDALTest", "ProjectManagerDALTest\ProjectManagerDALTest.csproj", "{36741442-403E-46BD-88B2-190E9D09326F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{5D9F024E-714E-40EC-9F05-3E686A484218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagerBLL", "ProjectManagerBLL\ProjectManagerBLL.csproj", "{3F9CD8C9-CE8D-43FE-BB02-080E356974B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{36741442-403E-46BD-88B2-190E9D09326F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36741442-403E-46BD-88B2-190E9D09326F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36741442-403E-46BD-88B2-190E9D09326F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9F024E-714E-40EC-9F05-3E686A484218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9F024E-714E-40EC-9F05-3E686A484218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9F024E-714E-40EC-9F05-3E686A484218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9F024E-714E-40EC-9F05-3E686A484218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F9CD8C9-CE8D-43FE-BB02-080E356974B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F9CD8C9-CE8D-43FE-BB02-080E356974B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F9CD8C9-CE8D-43FE-BB02-080E356974B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F9CD8C9-CE8D-43FE-BB02-080E356974B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

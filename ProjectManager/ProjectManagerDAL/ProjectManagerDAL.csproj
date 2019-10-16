@@ -54,19 +54,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Employee.cs" />
     <Compile Include="EmployeeRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Migrations\201910120855541_entities added.cs" />
     <Compile Include="Migrations\201910120855541_entities added.designer.cs">
       <DependentUpon>201910120855541_entities added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910161456563_task table change.cs" />
+    <Compile Include="Migrations\201910161456563_task table change.designer.cs">
+      <DependentUpon>201910161456563_task table change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910161611524_task table name change to TaskN.cs" />
+    <Compile Include="Migrations\201910161611524_task table name change to TaskN.designer.cs">
+      <DependentUpon>201910161611524_task table name change to TaskN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Project.cs" />
     <Compile Include="ProjectMgrModel.cs" />
     <Compile Include="ProjectRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task.cs" />
     <Compile Include="TaskRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,8 +82,18 @@
     <EmbeddedResource Include="Migrations\201910120855541_entities added.resx">
       <DependentUpon>201910120855541_entities added.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910161456563_task table change.resx">
+      <DependentUpon>201910161456563_task table change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910161611524_task table name change to TaskN.resx">
+      <DependentUpon>201910161611524_task table name change to TaskN.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{5d9f024e-714e-40ec-9f05-3e686a484218}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Exceptions\Exceptions.csproj">
       <Project>{9ea33135-57ac-4e4a-8726-c76573daf94b}</Project>
       <Name>Exceptions</Name>

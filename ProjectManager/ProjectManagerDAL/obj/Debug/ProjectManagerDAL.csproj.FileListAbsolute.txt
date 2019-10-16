@@ -14,3 +14,8 @@ C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\Pro
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.csproj.GenerateResource.cache
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\Exceptions.dll
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\Exceptions.pdb
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\Entities.dll
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\Entities.pdb
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\Entities.dll.config
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.Migrations.tasktablechange.resources
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.Migrations.tasktablenamechangetoTaskN.resources

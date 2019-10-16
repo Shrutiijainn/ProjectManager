@@ -43,7 +43,7 @@ namespace ProjectManagerDAL
             }
         }
 
-        public List<Employee> GetAll()
+        public List<Employee> Display()
         {
             try
             {
