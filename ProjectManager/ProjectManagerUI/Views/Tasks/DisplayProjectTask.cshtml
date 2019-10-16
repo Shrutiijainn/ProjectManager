@@ -1,0 +1,48 @@
+﻿@model ProjectManagerUI.ViewModels.TaskViewModel
+
+@{
+    ViewBag.Title = "DisplayProjectTask";
+}
+
+<h2>DisplayProjectTask</h2>
+
+<h1>Project Id :  @Model.ProjectId</h1>
+<h1>Project Name: @Model.ProjectTitle</h1>
+
+<h1>All Tasks are</h1>
+@foreach (var task in Model.Tasks)
+{
+    <p>Id : @task.TaskId </p>
+    <p>Name  : @task.TaskName</p>
+}
+
+@*@Html.Partial("_myview",Model.CurrentRating)*@
+
+@using (Html.BeginForm("AddTask", "Task", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.TaskId)
+
+    @Html.LabelFor(m => m.TaskName)
+    @Html.EditorFor(m => m.TaskName)
+    <br />
+    @Html.LabelFor(m => m.TaskStartDate)
+    @Html.EditorFor(m => m.TaskStartDate)
+    <br />
+    @Html.LabelFor(m => m.TaskEndDate)
+    @Html.EditorFor(m => m.TaskEndDate)
+    <br />
+    @Html.LabelFor(m => m.TaskPriority)
+    @Html.EditorFor(m => m.TaskPriority)
+    <br />
+    @Html.LabelFor(m => m.TaskStatus)
+    @Html.EditorFor(m => m.TaskStatus)
+    <br />
+    @Html.LabelFor(m => m.ProjectId)
+    @Html.EditorFor(m => m.ProjectId)
+    <br />
+    @Html.LabelFor(m => m.EmployeeId)
+    @Html.EditorFor(m => m.EmployeeId)
+    <br />
+    <input type="submit" value="Add Task" />
+
+}

@@ -9,56 +9,67 @@ namespace ProjectManagerDAL
 {
     public class ProjectRepository : IRepository<Project>
     {
-        ProjectMgrModel _dbContext;
+        ProjectMgrModel objContext;
 
         public ProjectRepository()
         {
-            _dbContext = new ProjectMgrModel();
+            objContext = new ProjectMgrModel();
         }
 
-        public bool Add(Project item)
+        public bool Add(Project obj)
         {
-            var IsAdded = false;
             try
             {
-                _dbContext.Projects.Add(item);
-                IsAdded = _dbContext.SaveChanges() > 0;
+                if (obj != null)
+                {
+                        objContext.Projects.Add(obj);
+                        return objContext.SaveChanges() > 0;
+                }
+                else
+                {
+                    throw new ProjectManagerException("No Project to add");
+                }
             }
-            catch (Exception ex)
+            catch (ProjectManagerException e)
             {
-                throw new ProjectManagerException("Error adding project" + ex);
+                throw e;
             }
-            return IsAdded;
         }
 
         public Project Find(int id)
         {
             try
             {
-                return _dbContext.Projects.Find(id);
+                return objContext.Projects.Find(id);
             }
-            catch (Exception ex)
+            catch (ProjectManagerException e)
             {
-                throw new ProjectManagerException("Error finding Project" + ex);
+                throw e;
             }
-            throw new NotImplementedException();
+            throw new ProjectManagerException("Error finding Project");
         }
 
-        public List<Project> GetAll()
+        public List<Project> Display()
         {
             try
             {
-                return _dbContext.Projects.ToList();
+                    if (objContext.Projects.Count() > 0)
+                    {
+                        return objContext.Projects.ToList();
+                    }
+                    else
+                    {
+                        throw new ProjectManagerException("No Data To Display");
+                    }
             }
-            catch (Exception ex)
+            catch (ProjectManagerException e)
             {
-                throw new ProjectManagerException("Error getting data" + ex);
+                throw e;
             }
         }
-
         public void Dispose()
         {
-            _dbContext.Dispose();
+            objContext.Dispose();
         }
     }
 }

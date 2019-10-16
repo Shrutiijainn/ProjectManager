@@ -7,25 +7,40 @@ using Exceptions;
 
 namespace ProjectManagerDAL
 {
-    public class TaskRepository : IRepository<Task>
+    public class TaskRepository : IRepository<TaskN>
     {
-        ProjectMgrModel _dbContext;
+        ProjectMgrModel objContext;
 
         public TaskRepository()
         {
-            _dbContext = new ProjectMgrModel();
+            objContext = new ProjectMgrModel();
         }
 
-        public bool Add(Task id)
-        {
-            throw new ProjectManagerException();
-        }
-
-        public Task Find(int id)
+        public bool Add(TaskN obj)
         {
             try
             {
-                return _dbContext.Tasks.Find(id);
+                if (obj != null)
+                {
+                        objContext.Tasks.Add(obj);
+                        return objContext.SaveChanges() > 0;
+                }
+                else
+                {
+                    throw new ProjectManagerException("No Project to add");
+                }
+            }
+            catch (ProjectManagerException e)
+            {
+                throw e;
+            }
+        }
+
+        public TaskN Find(int id)
+        {
+            try
+            {
+                return objContext.Tasks.Find(id);
             }
             catch (Exception ex)
             {
@@ -33,21 +48,54 @@ namespace ProjectManagerDAL
             }
         }
 
-        public List<Task> GetAll()
+        public List<TaskN> Display()
         {
             try
             {
-                return _dbContext.Tasks.ToList();
+                    if (objContext.Tasks.Count() > 0)
+                    {
+                        return objContext.Tasks.ToList();
+                    }
+                    else
+                    {
+                        throw new ProjectManagerException("No Data To Display");
+                    }
+            }
+            catch (ProjectManagerException e)
+            {
+                throw e;
+            }
+        }
+
+
+        public List<TaskN> GetTasks(int projectId)
+        {
+            TaskN task = new TaskN();
+            //return new List<Rating>() {
+            //    new Rating(){ RatingValue=5, Customer="Jojo" },
+            //    new Rating(){ RatingValue=3, Customer="Sam" }
+            //};
+
+            try
+            {
+                task= objContext.Tasks.Find(projectId);
+                return objContext.Tasks.ToList();
             }
             catch (Exception ex)
             {
-                throw new ProjectManagerException("Error getting data" + ex);
+                throw new ProjectManagerException("Error finding Task" + ex);
             }
+
+        }
+
+        public bool AddTask(TaskN obj)
+        {
+            return true;
         }
 
         public void Dispose()
         {
-            _dbContext.Dispose();
+            objContext.Dispose();
         }
 
     }

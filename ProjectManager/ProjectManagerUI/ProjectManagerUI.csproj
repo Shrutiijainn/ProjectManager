@@ -164,17 +164,22 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ProjectViewModel.cs" />
+    <Compile Include="ViewModels\TaskViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <Content Include="Views\Projects\ViewProjects.cshtml" />
+    <Content Include="Views\Tasks\DisplayProjectTask.cshtml" />
+    <Content Include="Views\Tasks\AddTask.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -187,6 +192,18 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{5d9f024e-714e-40ec-9f05-3e686a484218}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
+      <Project>{9ea33135-57ac-4e4a-8726-c76573daf94b}</Project>
+      <Name>Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectManagerBLL\ProjectManagerBLL.csproj">
+      <Project>{3F9CD8C9-CE8D-43FE-BB02-080E356974B2}</Project>
+      <Name>ProjectManagerBLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectManagerDAL\ProjectManagerDAL.csproj">
       <Project>{464311dd-c7ff-48c7-8582-fe48f0e3602a}</Project>
       <Name>ProjectManagerDAL</Name>

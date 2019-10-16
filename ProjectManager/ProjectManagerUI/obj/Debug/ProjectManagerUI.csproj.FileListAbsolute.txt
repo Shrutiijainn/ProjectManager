@@ -76,3 +76,9 @@ C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerUI\bin\ProjectMan
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerUI\bin\EntityFramework.xml
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerUI\bin\EntityFramework.SqlServer.xml
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerUI\bin\Exceptions.pdb
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerUI\bin\Entities.dll
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerUI\bin\Entities.pdb
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerUI\bin\Entities.dll.config
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerUI\bin\ProjectManagerBLL.dll
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerUI\bin\ProjectManagerBLL.pdb
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerUI\bin\ProjectManagerBLL.dll.config

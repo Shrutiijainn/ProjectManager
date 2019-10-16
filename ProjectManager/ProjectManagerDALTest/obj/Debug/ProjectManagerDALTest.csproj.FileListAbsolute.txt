@@ -22,3 +22,6 @@ C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDALTest\obj\Debug
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDALTest\obj\Debug\ProjectManagerDALTest.csproj.CopyComplete
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDALTest\obj\Debug\ProjectManagerDALTest.dll
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDALTest\obj\Debug\ProjectManagerDALTest.pdb
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDALTest\bin\Debug\Entities.dll
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDALTest\bin\Debug\Entities.pdb
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDALTest\bin\Debug\Entities.dll.config

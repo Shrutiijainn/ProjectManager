@@ -24,7 +24,7 @@ namespace ProjectManagerDALTest
         [Test]
         public void GetAllTest()
         {
-            var ActualCount = repo.GetAll().Count;
+            var ActualCount = repo.Display().Count;
             var ExpectedCount = 5;
             Assert.AreEqual(ExpectedCount, ActualCount);
         }

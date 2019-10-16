@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProjectManagerUI.ViewModels.ProjectViewModel>
+
+@{
+    ViewBag.Title = "ViewProjects";
+}
+
+<h2>View Projects</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeId)
+        </td>
+        <td>
+            @Html.ActionLink("View Tasks", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Add Tasks", "Details", new { /* id=item.PrimaryKey */ }) 
+            @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        </td>
+    </tr>
+}
+
+</table>

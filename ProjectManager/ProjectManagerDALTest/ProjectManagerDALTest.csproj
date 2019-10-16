@@ -66,6 +66,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{5d9f024e-714e-40ec-9f05-3e686a484218}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
+      <Project>{9ea33135-57ac-4e4a-8726-c76573daf94b}</Project>
+      <Name>Exceptions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectManagerDAL\ProjectManagerDAL.csproj">
       <Project>{464311dd-c7ff-48c7-8582-fe48f0e3602a}</Project>
       <Name>ProjectManagerDAL</Name>
