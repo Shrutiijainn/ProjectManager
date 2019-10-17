@@ -54,6 +54,26 @@ namespace ProjectManagerDAL
                 throw new ProjectManagerException("Error getting data" + ex);
             }
         }
+
+        public List<Employee> DisplayDesignation()
+        {
+            try
+            {
+                ProjectMgrModel context = new ProjectMgrModel();
+
+                var Query = from item in context.Projects
+                            select item.EmployeeId;
+                var q = from Employee in context.Employees
+                        where Employee.EmployeeDesignation == "ProjectManager" && !Query.Contains(Employee.EmployeeId)
+                        select Employee;
+                return q.ToList();
+            }
+
+            catch (Exception ex)
+            {
+                throw new ProjectManagerException("Error getting data" + ex);
+            }
+        }
         public void Dispose()
         {
             _dbContext.Dispose();

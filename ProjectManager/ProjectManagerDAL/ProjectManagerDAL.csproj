@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201910161611524_task table name change to TaskN.designer.cs">
       <DependentUpon>201910161611524_task table name change to TaskN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910171625362_Data added.cs" />
+    <Compile Include="Migrations\201910171625362_Data added.designer.cs">
+      <DependentUpon>201910171625362_Data added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProjectMgrModel.cs" />
     <Compile Include="ProjectRepository.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910161611524_task table name change to TaskN.resx">
       <DependentUpon>201910161611524_task table name change to TaskN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910171625362_Data added.resx">
+      <DependentUpon>201910171625362_Data added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

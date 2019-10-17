@@ -14,12 +14,12 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @*<div class="form-group">
-            @Html.LabelFor(model => model.ProjectId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.ProjectId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProjectId, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
+                @Html.LabelFor(model => model.ProjectId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.ProjectId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ProjectId, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.ProjectTitle, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -32,7 +32,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProjectStartDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-6">
-                @Html.EditorFor(model => model.ProjectStartDate, new { htmlAttributes = new { @Type="date",@class = "form-control" } })
+                @Html.EditorFor(model => model.ProjectStartDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ProjectStartDate, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProjectEndDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-6">
-                @Html.EditorFor(model => model.ProjectEndDate, new { htmlAttributes = new { @Type="date",@class = "date-picker form-control auto-focus" } })
+                @Html.EditorFor(model => model.ProjectEndDate, new { htmlAttributes = new { @class = "date-picker form-control auto-focus" } })
                 @Html.ValidationMessageFor(model => model.ProjectEndDate, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -48,7 +48,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EmployeeId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-6">
-                @Html.EditorFor(model => model.EmployeeId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.EmployeeId, Model.Employees, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -56,15 +56,52 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-6">
                 <input type="submit" value="Add" class="btn btn-primary" />
-                @Html.ActionLink("Back to List", "Index","Home",null,new {@class="btn btn-secondary"})
+                @Html.ActionLink("Back to List", "Index", "Home", null, new { @class = "btn btn-secondary" })
             </div>
         </div>
     </div>
 }
 <div>
-    
+
 </div>
 @section scripts{
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
     <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var from = $("#ProjectStartDate")
+                .datepicker({
+                    dateFormat: "dd-mm-yy",
+                    changeMonth: true
+                })
+                .on("change", function () {
+                    to.datepicker("option", "minDate", getDate(this));
+                }),
+                to = $("#ProjectEndDate").datepicker({
+                    dateFormat: "dd-mm-yy",
+                    changeMonth: true
+                })
+                    .on("change", function () {
+                        from.datepicker("option", "maxDate", getDate(this));
+                    });
+            function getDate(element) {
+                var date;
+                var dateFormat = "dd-mm-yy";
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+                return date;
+            }
+        });
+        $(function () {
+            var val = $('#EmployeeId').val;
+            $.each(val, function (index, element) {
+                console.log(index + ' ' + element)
+            });
+        });
+    </script>
 }
