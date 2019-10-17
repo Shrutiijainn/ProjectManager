@@ -45,8 +45,8 @@
             </td>
             <td>
                 @Html.ActionLink("View Tasks", "DisplayProjectTask", "ProjectTask", new { id = item.ProjectId }, null) |
-                @Html.ActionLink("Add Tasks", "AddTask", "ProjectTask", new { id = item.ProjectId }, null)
-                @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                @Html.ActionLink("Add Tasks", "AddTask", "ProjectTask", new { id = item.ProjectId }, null)|
+                @Html.ActionLink("Task Report", "ProjectTaskByStatus", "ProjectTask", new { id = item.ProjectId }, null)
             </td>
         </tr>
     }

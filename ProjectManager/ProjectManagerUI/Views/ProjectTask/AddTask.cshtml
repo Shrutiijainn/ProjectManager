@@ -4,39 +4,17 @@
     ViewBag.Title = "AddTask";
 }
 
-<h2>AddTask</h2>
+<h2>Add Task</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>ProjectTaskViewModel</h4>
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        @*<div class="form-group">
-                @Html.LabelFor(model => model.ProjectId, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ProjectId, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EmployeeId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TaskId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TaskId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TaskId, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.TaskName, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -71,9 +49,27 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.EmployeeId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EmployeeId, Model.Employeess, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
             @Html.LabelFor(model => model.TaskPriority, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TaskPriority, new { htmlAttributes = new { @class = "form-control" } })
+
+              1  @Html.RadioButtonFor(model => model.TaskPriority, 1, new { @value = "1", htmlAttributes = new { @class = "form-control" } })
+              2 @Html.RadioButtonFor(model => model.TaskPriority, 2, new { @value = "2", htmlAttributes = new { @class = "form-control" } })
+
+              3  @Html.RadioButtonFor(model => model.TaskPriority, 3, new { @value = "3", htmlAttributes = new { @class = "form-control" } })
+
+              4  @Html.RadioButtonFor(model => model.TaskPriority, 4, new { @value = "4", htmlAttributes = new { @class = "form-control" } })
+
+              5  @Html.RadioButtonFor(model => model.TaskPriority, 5, new { @value = "5", htmlAttributes = new { @class = "form-control" } })
+
                 @Html.ValidationMessageFor(model => model.TaskPriority, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -81,19 +77,63 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TaskStatus, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TaskStatus, new { htmlAttributes = new { @class = "form-control" } })
+             Pending:   @Html.RadioButtonFor(model => model.TaskStatus, "pending", new { htmlAttributes = new { @class = "form-control" } })
+             Completed: @Html.RadioButtonFor(model => model.TaskStatus, "completed", new { htmlAttributes = new { @class = "form-control" } })
+
                 @Html.ValidationMessageFor(model => model.TaskStatus, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary" />
+                @Html.ActionLink("Back to List", "Index", "Home", null, new { @class = "btn btn-secondary" })
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+@section scripts{
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var from = $("#TaskStartDate")
+                .datepicker({
+                    dateFormat: "dd-mm-yy",
+                    changeMonth: true,
+                    changeYear: true,
+                    
+                })
+                .on("change", function () {
+                    to.datepicker("option", "minDate", getDate(this));
+                }),
+                to = $("#TaskEndDate").datepicker({
+                    dateFormat: "yy-mm-dd",
+                    changeMonth: true,
+                    changeYear: true,
+                    //defaultDate: new Date()
+                })
+                    .on("change", function () {
+                        from.datepicker("option", "maxDate", getDate(this));
+                    });
+            function getDate(element) {
+                var date;
+                var dateFormat = "dd-mm-yy";
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+                return date;
+            }
+        });
+        $(function () {
+            var val = $('#EmployeeId').val;
+            $.each(val, function (index, element) {
+                console.log(index + ' ' + element)
+            });
+        });
+    </script>
+}

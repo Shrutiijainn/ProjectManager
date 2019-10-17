@@ -27,6 +27,7 @@ namespace ProjectManagerBLL
                 throw e;
             }
         }
+
         public bool AddProject(Project proj)
         {
             try
@@ -38,7 +39,18 @@ namespace ProjectManagerBLL
                 throw e;
             }
         }
-
+        public Project Find(int id)
+        {
+            try
+            {
+                return ProjectRepo.Find(id);
+            }
+            catch (ProjectManagerException e)
+            {
+                throw e;
+            }
+            throw new ProjectManagerException("Error finding Project");
+        }
 
     }
 }

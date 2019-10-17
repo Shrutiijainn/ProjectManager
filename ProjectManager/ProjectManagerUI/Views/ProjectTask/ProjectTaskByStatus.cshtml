@@ -1,0 +1,108 @@
+﻿@model ProjectManagerUI.ViewModels.ProjectTaskViewModel
+
+@{
+    ViewBag.Title = "ProjectTaskByStatus";
+    var Count = 0;
+    var CompletedTask = 0;
+    var PendingTask = 0;
+}
+
+<h1>Project Details</h1>
+
+<p>ProjectId : @Model.ProjectId </p>
+<p>ProjectTitle  : @Model.ProjectTitle</p>
+<p>ProjectStartDate : @Model.ProjectStartDate </p>
+<p>ProjectEndDate  : @Model.ProjectEndDate</p>
+<p>EmployeeId : @Model.EmployeeId </p>
+
+@foreach (var item in Model.Tasks)
+{
+    Count++;
+    if (item.TaskStatus == "completed")
+    {
+        CompletedTask++;
+    }
+    if (item.TaskStatus == "pending")
+    {
+        PendingTask++;
+    }
+}
+<p>Total number of tasks in @Model.ProjectTitle are : @Count</p>
+<p>Completed tasks are: @CompletedTask</p>
+<p>pending tasks are: @PendingTask</p>
+<h2>View Task Report</h2>
+    Pending: @Html.RadioButtonFor(model => model.TaskStatus, "pending", new { htmlAttributes = new { @class = "form-control" }})
+    Completed: @Html.RadioButtonFor(model => model.TaskStatus, "completed", new { htmlAttributes = new { @class = "form-control" } })
+    Total Task: @Html.RadioButtonFor(model => model.TaskStatus, "totaltask", new { htmlAttributes = new {  @class = "form-control" } })
+
+    @*<h1>All Tasks are</h1>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(m => m.TaskId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.TaskName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.TaskStartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.TaskEndDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.TaskPriority)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.TaskStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.ProjectId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.EmployeeId)
+                </th>
+            </tr>
+            @foreach (var item in Model.Tasks)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => @item.TaskId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @item.TaskName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @item.TaskStartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @item.TaskEndDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @item.TaskPriority)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @item.TaskStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @item.ProjectId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => @item.EmployeeId)
+                    </td>
+
+                </tr>
+            }
+        </table>*@
+
+    @section scripts{
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+        <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+            });
+        </script>
+    }

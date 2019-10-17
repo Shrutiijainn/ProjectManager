@@ -38,5 +38,31 @@ namespace ProjectmanagerBLL
                 throw e;
             }
         }
+
+        public List<TaskN> GetTasks(int projectId)
+        {
+
+            try
+            {
+                return TaskRepo.GetTasks(projectId);
+            }
+            catch (Exception ex)
+            {
+                throw new ProjectManagerException("Error finding Task" + ex);
+            }
+        }
+        public List<Employee> Displaypendingtasks()
+        {
+            try
+            {
+                return TaskRepo.Displaypendingtasks().ToList();
+            }
+            catch (ProjectManagerException e)
+            {
+                throw e;
+            }
+        }
+
+
     }
 }
