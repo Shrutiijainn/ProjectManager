@@ -23,10 +23,6 @@ namespace ProjectManagerUI.ViewModels
         public DateTime ProjectEndDate { get; set; }
         [Display(Name = "Select Project Manager")]
         public int EmployeeId { get; set; }
-
-
         public SelectList Employees { get; set; }
-
-
     }
 }

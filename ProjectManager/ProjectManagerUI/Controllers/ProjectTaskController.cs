@@ -1,4 +1,6 @@
 ﻿using Exceptions;
+using ProjectmanagerBLL;
+using ProjectManagerBLL;
 using ProjectManagerDAL;
 using ProjectManagerUI.ViewModels;
 using System;
@@ -11,8 +13,12 @@ namespace ProjectManagerUI.Controllers
 {
     public class ProjectTaskController : Controller
     {
-        TaskRepository TaskRepo = new TaskRepository();
-        // GET: ProductTask
+         TaskService TaskServ = null;
+
+        public ProjectTaskController()
+        {
+            TaskServ = new TaskService();
+        }
         public ActionResult Index()
         {
             return View();
@@ -21,11 +27,31 @@ namespace ProjectManagerUI.Controllers
 
         public ActionResult DisplayProjectTask(int id)
         {
-            var prepository = new ProjectRepository();
-            var project = prepository.Find(id);
+            var pservice = new ProjectService();
+            var project = pservice.Find(id);
 
-            var trepository = new TaskRepository();
-            var tasks = trepository.GetTasks(id);
+            var tservice = new TaskService();
+            var tasks = tservice.GetTasks(id);
+
+            var viewmodel = new ProjectTaskViewModel();
+            viewmodel.ProjectId = project.ProjectId;
+            viewmodel.ProjectTitle = project.ProjectTitle;
+            viewmodel.ProjectStartDate = project.ProjectStartDate;
+            viewmodel.ProjectEndDate = project.ProjectEndDate;
+            viewmodel.EmployeeId = project.EmployeeId;
+
+            viewmodel.Tasks = tasks;
+
+            return View(viewmodel);
+        }
+
+        public ActionResult ProjectTaskByStatus(int id)
+        {
+            var pservice = new ProjectService();
+            var project = pservice.Find(id);
+
+            var tservice = new TaskService();
+            var tasks = tservice.GetTasks(id);
 
             var viewmodel = new ProjectTaskViewModel();
             viewmodel.ProjectId = project.ProjectId;
@@ -41,7 +67,9 @@ namespace ProjectManagerUI.Controllers
 
         public ActionResult AddTask()
         {
-            return View();
+            var item = new ProjectTaskViewModel();
+            item.Employeess = new SelectList(TaskServ.Displaypendingtasks(), "EmployeeId", "EmployeeName", "EmployeeDesignation");
+            return View(item);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -62,9 +90,10 @@ namespace ProjectManagerUI.Controllers
                         TaskEndDate = item.TaskEndDate,
                         TaskStatus = item.TaskStatus,
                         ProjectId = Id,
-                        EmployeeId = item.EmployeeId
+                        EmployeeId = item.EmployeeId,
+                        TaskPriority=item.TaskPriority
                     };
-                    var Added = TaskRepo.Add(Task);
+                    var Added = TaskServ.AddTask(Task);
                     if (Added)
                     {
                         return RedirectToAction("DisplayProjectTask" + "/" + Id);

@@ -229,6 +229,7 @@
     <Content Include="Views\Task\ViewTasks.cshtml" />
     <Content Include="Views\ProjectTask\AddTask.cshtml" />
     <Content Include="Views\ProjectTask\DisplayProjectTask.cshtml" />
+    <Content Include="Views\ProjectTask\ProjectTaskByStatus.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

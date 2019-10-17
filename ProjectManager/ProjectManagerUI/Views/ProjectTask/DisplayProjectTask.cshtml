@@ -2,8 +2,8 @@
 
 @{
     ViewBag.Title = "DisplayProjectTask";
+    var Count = 0;
 }
-
 
 <h1>Project Details</h1>
 
@@ -13,16 +13,13 @@
 <p>ProjectEndDate  : @Model.ProjectEndDate</p>
 <p>EmployeeId : @Model.EmployeeId </p>
 
-
-
-
+@foreach (var item in Model.Tasks)
+{
+    Count++;
+}
+<p>Total number of tasks in @Model.ProjectTitle are : @Count</p>
 
 @Html.ActionLink("Add Tasks", "AddTask", "ProjectTask", new { id = Model.ProjectId }, null)
-
-
-
-
-
 
 <h1>All Tasks are</h1>
 <table class="table">
@@ -41,6 +38,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(m => m.TaskPriority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.TaskStatus)
         </th>
         <th>
             @Html.DisplayNameFor(m => m.ProjectId)
@@ -68,6 +68,9 @@
                 @Html.DisplayFor(modelItem => @item.TaskPriority)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => @item.TaskStatus)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => @item.ProjectId)
             </td>
             <td>
@@ -77,41 +80,3 @@
         </tr>
     }
 </table>
-
-
-@*<h1>All Tasks are</h1>
-    @foreach (var task in Model.Tasks)
-    {
-        <p>Id : @task.TaskId </p>
-        <p>Name  : @task.TaskName</p>
-        <p>Employee :@task.EmployeeId</p>
-    }*@
-
-
-
-@*@using (Html.BeginForm("AddTask", "Task", FormMethod.Post))
-    {
-        @Html.HiddenFor(m => m.TaskId)
-        @Html.LabelFor(m => m.TaskName)
-        @Html.EditorFor(m => m.TaskName)
-        <br />
-        @Html.LabelFor(m => m.TaskStartDate)
-        @Html.EditorFor(m => m.TaskStartDate)
-        <br />
-        @Html.LabelFor(m => m.TaskEndDate)
-        @Html.EditorFor(m => m.TaskEndDate)
-        <br />
-        @Html.LabelFor(m => m.TaskPriority)
-        @Html.EditorFor(m => m.TaskPriority)
-        <br />
-        @Html.LabelFor(m => m.TaskStatus)
-        @Html.EditorFor(m => m.TaskStatus)
-        <br />
-        @Html.LabelFor(m => m.ProjectId)
-        @Html.EditorFor(m => m.ProjectId)
-        <br />
-        @Html.LabelFor(m => m.EmployeeId)
-        @Html.EditorFor(m => m.EmployeeId)
-        <br />
-        <input type="submit" value="Add Task" />
-    }*@

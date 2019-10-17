@@ -14,13 +14,11 @@ namespace ProjectManagerUI.Controllers
 
     public class TaskController : Controller
     {
-        EmployeeRepository EmpRepo = null;
-        TaskRepository TaskRepo = null;
+        TaskService TaskServ = null;
 
         public TaskController()
         {
-            EmpRepo = new EmployeeRepository();
-            TaskRepo = new TaskRepository();
+            TaskServ = new TaskService();
         }
 
         // GET: Task
@@ -49,7 +47,7 @@ namespace ProjectManagerUI.Controllers
         public ActionResult AddTask()
         {
             var item = new TaskViewModel();
-            item.Employees = new SelectList(TaskRepo.Displaypendingtasks(), "EmployeeId", "EmployeeName", "EmployeeDesignation");
+            item.Employees = new SelectList(TaskServ.Displaypendingtasks(), "EmployeeId", "EmployeeName", "EmployeeDesignation");
             return View(item);
         }
 
