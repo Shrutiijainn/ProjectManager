@@ -19,3 +19,4 @@ C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\Ent
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\bin\Debug\Entities.dll.config
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.Migrations.tasktablechange.resources
 C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.Migrations.tasktablenamechangetoTaskN.resources
+C:\Users\SHRUTI JAIN\source\repos\ProjectManager\ProjectManagerDAL\obj\Debug\ProjectManagerDAL.Migrations.Dataadded.resources

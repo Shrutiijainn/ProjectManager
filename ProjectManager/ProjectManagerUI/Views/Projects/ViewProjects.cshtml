@@ -25,29 +25,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProjectId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProjectTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProjectStartDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProjectEndDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EmployeeId)
-        </td>
-        <td>
-            @Html.ActionLink("View Tasks", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Add Tasks", "Details", new { /* id=item.PrimaryKey */ }) 
-            @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                @Html.ActionLink("View Tasks", "DisplayProjectTask", "ProjectTask", new { id = item.ProjectId }, null) |
+                @Html.ActionLink("Add Tasks", "AddTask", "ProjectTask", new { id = item.ProjectId }, null)
+                @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </td>
+        </tr>
+    }
 </table>

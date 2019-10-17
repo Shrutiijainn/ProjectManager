@@ -9,9 +9,9 @@ namespace ProjectManagerUI.ViewModels
     public class ProjectViewModel
     {
         public int ProjectId { get; set; }
-        [StringLength(50,ErrorMessage ="Minimum 3 characters and Maximum 50")]
+        [StringLength(50, ErrorMessage = "Minimum 3 characters and Maximum 50")]
         [Required]
-        [Display(Name ="Enter Project Title")]
+        [Display(Name = "Enter Project Title")]
         public string ProjectTitle { get; set; }
 
         [Required]
@@ -19,8 +19,14 @@ namespace ProjectManagerUI.ViewModels
         public DateTime ProjectStartDate { get; set; }
         [Required]
         [Display(Name = "Enter End Date")]
-        
+
         public DateTime ProjectEndDate { get; set; }
+        [Display(Name = "Select Project Manager")]
         public int EmployeeId { get; set; }
+
+
+        public SelectList Employees { get; set; }
+
+
     }
 }

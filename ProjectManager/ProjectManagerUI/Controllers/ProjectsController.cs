@@ -13,10 +13,11 @@ namespace ProjectManagerUI.Controllers
     {
         // GET: Projects
         ProjectService objProjectService =null;
-
+        EmployeeService objEmployeeService = null;
         public ProjectsController()
         {
             objProjectService = new ProjectService();
+            objEmployeeService = new EmployeeService();
         }
 
         public ActionResult Index()
@@ -47,7 +48,9 @@ namespace ProjectManagerUI.Controllers
         }
         public ActionResult Add()
         {
-            return View("Add");
+            var item = new ProjectViewModel();
+            item.Employees = new SelectList(objEmployeeService.DisplayDesignation(), "EmployeeId", "EmployeeName", "EmployeeDesignation");
+            return View(item);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
